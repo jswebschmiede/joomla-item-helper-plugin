@@ -2,6 +2,8 @@
 
 namespace Mity;
 
+use Joomla\Component\Fields\Administrator\Helper\FieldsHelper;
+
 defined('_JEXEC') or die;
 
 
@@ -172,7 +174,7 @@ class ItemHelper
         $item->jcfieldsnames = [];
         if (!isset($item->jcfields)) {
             // get the fields if they're not loaded
-            $item->jcfields = \FieldsHelper::getFields($type, $item, true);
+            $item->jcfields = FieldsHelper::getFields($type, $item, true);
         }
 
         if (is_array($item->jcfields) && count($item->jcfields) > 0) {
